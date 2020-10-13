@@ -11,3 +11,4 @@ completely ringing the alarm, it resumes back the clock and you can set the next
 invalid time it shows "Enter correctly". We have a cancel button for cancelling the alarm.
 
 You can also change the alarm song by specifying its full name(with extension) in the text field adjacent to ok button, the song must be in the same folder as the exe file.
+By default "alone_marshmello.mp3" file is used.
