@@ -49,7 +49,8 @@ def ringAlarm(alarm_time):
         #Alarm Time
         if(now==alarm_time):
             msg.configure(text="WAKE UP!")
-            playsound("alone_marshmello.mp3")
+            file = songVar.get()
+            playsound(file)
             print("................")
             break
 
@@ -109,6 +110,7 @@ minVar = StringVar()
 secVar = StringVar()
 cancelVar = BooleanVar()
 cancelVar.set(False)
+songVar = StringVar(clock, value="alone_marshmello.mp3")
 
 #Entry of variables
 hour = Entry(clock, textvariable=hourVar, width=3, font=("Calibri",17), justify="center")
@@ -120,9 +122,13 @@ minute.place(x=230, y=73, height=25)
 second = Entry(clock, textvariable=secVar, width=3, font=("Calibri",17), justify="center")
 second.place(x=284, y=73, height=25)
 
+#Song Entry
+song = Entry(clock, textvariable=songVar, font=("Calibri",10))
+song.place(x=176, y=103, height=24, width=100)
+
 #Result
 msg = Label(clock, text="", font=30, bg="grey")
-msg.place(x=194, y=155)
+msg.place(x=196, y=155)
 
 #Ok button
 button = Button(clock, text="OK", command=setAlarm)
@@ -130,7 +136,7 @@ button.place(x=283, y=103, width=45, height=25)
 
 #Cancel Button
 cancelButton = Button(clock, text="CANCEL", command=cancelAlarm)
-cancelButton.place(x=248, y=130, width=80, height=25)
+cancelButton.place(x=248, y=132, width=80, height=25)
 
 #Active Clock
 time()
